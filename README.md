@@ -1,9 +1,8 @@
 # 🧠 Evaluation of generalization of Convolutional Neural Networks trained with proxy tasks
 
-📌 This repository contains the code, pretrained models, and documentation related to my undergraduate thesis on **Self-Supervised Learning** using proxy tasks. The goal of this project was to evaluate how effectively various proxy tasks can train convolutional neural networks without labeled data, and how well the learned representations transfer to downstream tasks like image retrieval and classification
+📌 This repository contains the code, pretrained models, and documentation related to my undergraduate thesis on **Self-Supervised Learning** using proxy tasks. The goal of this project was to evaluate how effectively various proxy tasks can train convolutional neural networks without labeled data, and how well the learned representations transfer to downstream tasks like image classification
 
 ## 🧾 Abstract
-This repo
 In recent years, Deep Learning (DL) and its applications in Computer Vision (CV) have seen rapid advancements. Despite this progress, many datasets remain underutilized due to the lack of annotations (unlabeled data). Labeling these datasets is a time-intensive process that often requires specialized human intervention, which makes them difficult to leverage effectively. Self-Supervised Learning (SSL) provides a promising solution to this problem by utilizing proxy/pretext tasks that train models without requiring labeled data. In these tasks, the model generates its own labels by manipulating the data, enabling it to learn meaningful features like object orientation, color, and image coherence, which can then be applied to tasks such as Image Classification or Object Detection.
 
 This thesis aims to compare three different proxy tasks: Image Rotation Prediction, Image Colorization, and Image Inpainting. The objective is to establish a fair comparison environment to evaluate the effectiveness of these tasks in the downstream task of image classification, which is inherently different as it requires labeled data for training. To ensure a fair comparison, the same architecture, hyperparameters, and settings were consistently applied across all proxy tasks and the downstream task.
@@ -30,27 +29,24 @@ The thesis includes both:
 │   ├── Thesis_Full_GR.pdf              # Full thesis (theory + experiments) in Greek
 │   └── Thesis_Presentation_GR.pdf      # Presentation slides in Greek
 │
-├── src/                                # Source code for experiments
-│   ├── proxy_tasks/                    # Self-supervised proxy tasks
-│   │   ├── rotation/                   # Image Rotation Prediction implementation
-│   │   ├── colorization/               # Image Colorization implementation
-│   │   └── inpainting/                 # Image Inpainting implementation
-│   │
-│   └── downstream_tasks/               # Downstream task evaluations
-│       ├── cifar_10_classification_final_layer/       # Fine-tuning only the last layer on CIFAR-10
-│       ├── cifar_10_classification_whole_model/       # Fine-tuning the entire model on CIFAR-10
-│       ├── cifar_100_classification_final_layer/      # Fine-tuning only the last layer on CIFAR-100
-│       └── cifar_100_classification_whole_model/      # Fine-tuning the entire model on CIFAR-100
-│
-└── weights/                            # Pretrained weights from proxy tasks
-    ├── cifar100-rotation-bestmodel.pth            # Best model from the rotation task on CIFAR-10
-    ├── cifar100_colorization_bestmodel.pth        # Best model from the colorization task on CIFAR-100
-    └── cifar100_inpainting_bestmodel.pth          # Best model from the inpainting task on CIFAR-10
+└── src/                                # Source code for experiments
+    ├── proxy_tasks/                    # Self-supervised proxy tasks
+    │   ├── rotation/                   # Image Rotation Prediction implementation
+    │   ├── colorization/               # Image Colorization implementation
+    │   └── inpainting/                 # Image Inpainting implementation
+    │
+    └── downstream_tasks/               # Downstream task evaluations
+        ├── cifar_10_classification_final_layer/       # Fine-tuning only the last layer on CIFAR-10 image classification
+        ├── cifar_10_classification_whole_model/       # Fine-tuning the entire model on CIFAR-10 image classification
+        ├── cifar_100_classification_final_layer/      # Fine-tuning only the last layer on CIFAR-100 image classification
+        └── cifar_100_classification_whole_model/      # Fine-tuning the entire model on CIFAR-100 image classification
 ```
 
 ## 🔁 Usage
 
-You can run each proxy task from scratch using the code in `src/proxy_tasks/`, or skip training and use the pretrained models provided in the `weights/` directory to directly run the downstream evaluations in `src/downstream_tasks/`.
+To run the downstream classification tasks, you must first train the proxy tasks on the CIFAR-100 dataset using the code in src/proxy_tasks/. After training, save the resulting .pth weight files.
 
-Each downstream folder corresponds to fine-tuning on either CIFAR-10 or CIFAR-100, using either just the final layer or the whole model.
+Then, update the paths in the downstream task scripts with the filenames of your own trained ".pth" models. You can choose to evaluate the pretrained models on either CIFAR-10 or CIFAR-100, and select whether to fine-tune only the final layer or the entire model.
+
+Use the appropriate folder in src/downstream_tasks/ depending on your evaluation setup.
 
