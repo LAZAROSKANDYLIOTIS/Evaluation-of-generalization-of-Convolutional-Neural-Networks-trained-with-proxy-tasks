@@ -36,10 +36,10 @@ The thesis includes both:
 │       └── rotation/                                  # Image Rotation Prediction implementation
 │         
 ├── thesis/                                            # Thesis documents
-│   ├── Thesis_Experimental_EN.pdf                     # Thesis experimental part in English
-│   ├── Thesis_Experimental_GR.pdf                     # Thesis experimental part in Greek
+│   ├── Thesis_Experimental_Part_EN.pdf                # Thesis experimental part in English
+│   ├── Thesis_Experimental_Part_GR.pdf                # Thesis experimental part in Greek
 │   ├── Thesis_Full_GR.pdf                             # Full thesis (theory + experiments) in Greek
-│   └── Thesis_Presentation_GR.pdf                     # Presentation slides in Greek
+│   └── Thesis_Presentation_GR.pptx                    # Presentation slides in Greek
 │
 └── README.md                                          # Main project README
 ```
