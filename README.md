@@ -23,25 +23,25 @@ The thesis includes both:
 ```text
 📦 root/
 │
-├──  src/                                                # Source code for experiments
-│    ├── proxy_tasks/                                    # Self-supervised proxy tasks
-│     │   ├── rotation/                                  # Image Rotation Prediction implementation
-│     │   ├── colorization/                              # Image Colorization implementation
-│     │   └── inpainting/                                # Image Inpainting implementation
-│     │
-│     └── downstream_tasks/                              # Downstream task evaluations
-│         ├── cifar_10_classification_final_layer/       # Fine-tuning only the last layer on CIFAR-10 image classification
-│         ├── cifar_10_classification_whole_model/       # Fine-tuning the entire model on CIFAR-10 image classification
-│         ├── cifar_100_classification_final_layer/      # Fine-tuning only the last layer on CIFAR-100 image classification
-│         └── cifar_100_classification_whole_model/      # Fine-tuning the entire model on CIFAR-100 image classification 
-│     
-├── thesis/                                              # Thesis documents
-│   ├── Thesis_Experimental_EN.pdf                       # Thesis experimental part in English
-│   ├── Thesis_Experimental_GR.pdf                       # Thesis experimental part in Greek
-│   ├── Thesis_Full_GR.pdf                               # Full thesis (theory + experiments) in Greek
-│   └── Thesis_Presentation_GR.pdf                       # Presentation slides in Greek
+├──  src/                                               # Source code for experiments
+│    ├── downstream_tasks/                              # Downstream task evaluations
+│    │   ├── cifar_100_classification_final_layer/      # Fine-tuning only the last layer on CIFAR-100 image classification
+│    │   ├── cifar_100_classification_whole_model/      # Fine-tuning the entire model on CIFAR-100 image classification
+│    │   ├── cifar_10_classification_final_layer/       # Fine-tuning only the last layer on CIFAR-10 image classification
+│    │   └── cifar_10_classification_whole_model/       # Fine-tuning the entire model on CIFAR-10 image classification  
+│    │
+│    └── proxy_tasks/                                   # Self-supervised proxy tasks
+│        ├── colorization/                              # Image Colorization implementation
+│        ├── inpainting/                                # Image Inpainting implementation
+│        └── rotation/                                  # Image Rotation Prediction implementation
+│         
+├── thesis/                                             # Thesis documents
+│   ├── Thesis_Experimental_EN.pdf                      # Thesis experimental part in English
+│   ├── Thesis_Experimental_GR.pdf                      # Thesis experimental part in Greek
+│   ├── Thesis_Full_GR.pdf                              # Full thesis (theory + experiments) in Greek
+│   └── Thesis_Presentation_GR.pdf                      # Presentation slides in Greek
 │
-└── README.md                                            # Main project README
+└── README.md                                           # Main project README
 ```
 
 ## 🔁 Usage
